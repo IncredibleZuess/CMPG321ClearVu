@@ -1,5 +1,4 @@
 from mongoengine import Document, StringField, IntField,ReferenceField,ListField
-from models.Suppliers import Suppliers
 
 class Product(Document):
     product_id = StringField(required=True, primary_key=True)
@@ -9,4 +8,4 @@ class Product(Document):
     description = StringField(required=True)
     price = StringField(required=True)
     stock = IntField(required=True)
-    supplier_id = ListField(ReferenceField(Suppliers))
+    supplier_id = ListField(ReferenceField('Suppliers'))
